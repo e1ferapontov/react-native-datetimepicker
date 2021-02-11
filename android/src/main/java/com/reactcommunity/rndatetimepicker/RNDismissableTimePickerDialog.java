@@ -211,8 +211,10 @@ class CustomTimePickerDialog extends TimePickerDialog {
 
   @Override
   public void updateTime(int hourOfDay, int minuteOfHour) {
-    mTimePicker.setCurrentHour(hourOfDay);
-    mTimePicker.setCurrentMinute(snapMinutesToInterval(minuteOfHour));
+    if (mTimePicker != null) {
+      mTimePicker.setCurrentHour(hourOfDay);
+      mTimePicker.setCurrentMinute(snapMinutesToInterval(minuteOfHour));
+    }
   }
 
   /**
